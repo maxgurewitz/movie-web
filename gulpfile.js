@@ -10,7 +10,11 @@ gulp.task('browserify', function() {
     .pipe(gulp.dest(__dirname + '/public/js/'));
 });
 
-gulp.task('start', function() {
+gulp.task('watch', function() {
+  gulp.watch(__dirname + '/src/client/**/*', ['browserify']);
+});
+
+gulp.task('start', ['watch'], function() {
   nodemon({
     watch: __dirname + '/src/app/',
     script: __dirname + '/scripts/server.js',
