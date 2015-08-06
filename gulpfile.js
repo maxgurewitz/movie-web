@@ -31,7 +31,7 @@ gulp.task('scss', function() {
 
 gulp.task('watch', function() {
   gulp.watch(__dirname + '/src/client/**/*', ['browserify']);
-  gulp.watch(__dirname + '/src/scss/**/*.scss', ['scss']);
+  gulp.watch(__dirname + '/assets/scss/**/*.scss', ['scss']);
 });
 
 gulp.task('start', ['browserify', 'scss', 'watch'], function() {
