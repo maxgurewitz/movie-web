@@ -1,7 +1,10 @@
 @import "bootstrap";
 @import "variables/_colors";
 
-#app {
-  // background-color: green;
+.body {
   background-color: $dark-slate-blue;
+}
+
+.header {
+  background-color: $medium-slate-blue;
 }
