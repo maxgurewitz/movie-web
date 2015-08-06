@@ -8,11 +8,15 @@ var server = new Hapi.Server();
 server.connection({ port: process.env.PORT || 3000 });
 
 server.register(registered, function(err) {
-  if (err) { return console.error('Failed to load a plugin:', err); }
+  if (err) {
+    return console.error('Failed to load a plugin:', err);
+  }
 });
 
 server.start(function(err) {
-  if (err) { return console.error("Failed to start server: " +  err); }
+  if (err) {
+    return console.error("Failed to start server: " +  err);
+  }
 
   console.log("Server Started.");
 });
