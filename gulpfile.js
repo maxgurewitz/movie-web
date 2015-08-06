@@ -7,7 +7,7 @@ var sass = require('gulp-sass');
 
 gulp.task('browserify', function() {
   return browserify({
-       entries: __dirname + '/src/client/app.js',
+       entries: __dirname + '/src/client/main.js',
        transform: [reactify]
      })
     .bundle()
