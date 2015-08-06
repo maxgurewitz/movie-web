@@ -19,12 +19,12 @@ gulp.task('scss', function() {
   var sassStream = sass({
     style: 'compressed',
     includePaths: [
-      __dirname + '/src/scss/',
+      __dirname + '/assets/scss/',
       __dirname + '/node_modules/bootstrap-sass/assets/stylesheets/'
     ]})
     .on('error', sass.logError)
 
-  gulp.src(__dirname + '/src/scss/base.scss')
+  gulp.src(__dirname + '/assets/scss/base.scss')
     .pipe(sassStream)
     .pipe(gulp.dest(__dirname + '/public/css'));
 });
