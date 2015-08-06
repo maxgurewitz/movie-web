@@ -4,6 +4,10 @@ var plugins = require('./plugins');
 
 module.exports = [
   {
+    register: plugins.static,
+    options: {}
+  },
+  {
     register: plugins.views,
     options: {}
   },
