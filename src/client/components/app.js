@@ -12,10 +12,9 @@ var App = module.exports = component(function(props) {
       <div className="body">
         Body
       </div>
+      <div className="footer">
+        Footer
+      </div>
     </div>
   );
 }).jsx;
-
-    // <h1>
-    //   Hi {model.getIn(['user', 'firstName'])} {model.getIn(['user', 'lastName'])}
-    // </h1>

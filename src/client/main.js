@@ -8,7 +8,7 @@ var model = initialModel();
 function render() {
   React.render(
     <App model={model.cursor()}/>,
-    document.getElementById('app')
+    document.getElementById('js-main')
   );
 }
 

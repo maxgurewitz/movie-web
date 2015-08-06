@@ -1,10 +1,28 @@
 @import "bootstrap";
 @import "variables/_colors";
+@import "mixins/_flex";
 
-.body {
-  background-color: $dark-slate-blue;
+body {
+  color: white;
+  @include default-flex;
+
+  div {
+    @include default-flex;
+  }
+
+  .body {
+    background-color: $dark-slate-blue;
+    flex: 92;
+  }
+
+  .header {
+    background-color: $medium-slate-blue;
+    flex: 10;
+  }
+
+  .footer {
+    color: $dark-slate-blue;
+    flex: 7;
+  }
 }
 
-.header {
-  background-color: $medium-slate-blue;
-}
