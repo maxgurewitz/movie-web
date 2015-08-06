@@ -13,6 +13,7 @@ body {
   .body {
     background-color: $dark-slate-blue;
     flex: 92;
+    flex-direction: row;
   }
 
   .header {
