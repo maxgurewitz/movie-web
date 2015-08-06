@@ -1,5 +1,7 @@
 @import "bootstrap";
+@import "variables/_colors";
 
 #app {
-  background-color: red;
+  // background-color: green;
+  background-color: $dark-slate-blue;
 }
