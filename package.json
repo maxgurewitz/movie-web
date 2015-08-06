@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/maxgurewitz/movie-web#readme",
   "dependencies": {
+    "gulp": "^3.9.0",
     "hapi": "^8.8.1",
     "require-directory": "^2.1.1"
   },
   "devDependencies": {
-    "ejs": "^2.3.3"
+    "ejs": "^2.3.3",
+    "gulp-nodemon": "^2.0.3"
   }
 }
