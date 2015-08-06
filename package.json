@@ -1,0 +1,22 @@
+{
+  "name": "movie-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxgurewitz/movie-web.git"
+  },
+  "author": "Max Gurewitz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxgurewitz/movie-web/issues"
+  },
+  "homepage": "https://github.com/maxgurewitz/movie-web#readme",
+  "dependencies": {
+    "hapi": "^8.8.1"
+  }
+}
