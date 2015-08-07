@@ -1,9 +1,8 @@
 var React = require('react');
 var component = require('omniscient');
-var initialModel = require('./model');
+var model = require('./model');
 var App = require('./components/app');
-
-var model = initialModel();
+var update = require('./update');
 
 function render() {
   React.render(
@@ -12,5 +11,6 @@ function render() {
   );
 }
 
+update.getMovies();
 render();
 model.on('swap', render);

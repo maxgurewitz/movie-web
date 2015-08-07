@@ -1,10 +1,14 @@
 @import "bootstrap";
 @import "variables/_colors";
+@import "variables/_sizes";
 @import "mixins/_flex";
+
+* { box-sizing: border-box; }
 
 body {
   color: white;
   @include default-flex;
+  font-size: $default-font-size;
 
   div {
     @include default-flex;
@@ -12,18 +16,33 @@ body {
 
   .body {
     background-color: $dark-slate-blue;
-    flex: 92;
-    flex-direction: row;
+    flex: 0 0 50%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    figure:nth-child(even) img { float: right; }
+
+    .movie-cell {
+      border: 1px solid #333;
+      position: relative;
+      font-size: 0;
+      flex: 0 0 50%;
+
+      .home-image {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 
   .header {
     background-color: $medium-slate-blue;
-    flex: 10;
+    flex: 1;
   }
 
   .footer {
     color: $dark-slate-blue;
-    flex: 7;
+    flex: 1;
   }
 }
 
