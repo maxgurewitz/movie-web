@@ -4,6 +4,7 @@ var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var reactify = require('reactify');
 var sass = require('gulp-sass');
+var shell = require('gulp-shell');
 
 gulp.task('browserify', function() {
   return browserify({
@@ -14,6 +15,8 @@ gulp.task('browserify', function() {
     .pipe(source('appBundle.js'))
     .pipe(gulp.dest(__dirname + '/public/js/'));
 });
+
+gulp.task('pg', shell.task(['postgres -D /usr/local/var/postgres']));
 
 gulp.task('scss', function() {
   var sassStream = sass({
@@ -34,7 +37,9 @@ gulp.task('watch', function() {
   gulp.watch(__dirname + '/assets/scss/**/*.scss', ['scss']);
 });
 
-gulp.task('start', ['browserify', 'scss', 'watch'], function() {
+gulp.task('build', ['browserify', 'scss']);
+
+gulp.task('start', ['pg', 'build', 'watch'], function() {
   nodemon({
     watch: __dirname + '/src/app/',
     script: __dirname + '/scripts/server.js',
