@@ -6059,5 +6059,37 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-#app {
-  background-color: red; }
+* {
+  box-sizing: border-box; }
+
+body {
+  color: white;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px; }
+  body div {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column; }
+  body .body {
+    background-color: #063b43;
+    flex: 0 0 50%;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+    body .body figure:nth-child(even) img {
+      float: right; }
+    body .body .movie-cell {
+      border: 1px solid #333;
+      position: relative;
+      font-size: 0;
+      flex: 0 0 50%; }
+      body .body .movie-cell .home-image {
+        width: 100%;
+        height: auto; }
+  body .header {
+    background-color: #216266;
+    flex: 1; }
+  body .footer {
+    color: #063b43;
+    flex: 1; }
