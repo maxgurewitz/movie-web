@@ -8,6 +8,10 @@ module.exports = [
     options: {}
   },
   {
+    register: plugins.auth,
+    options: {}
+  },
+  {
     register: plugins.views,
     options: {}
   },

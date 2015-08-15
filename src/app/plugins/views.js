@@ -1,14 +1,14 @@
 var srcSettings = require(__BASE + '/../settings.json');
-var viewController = require(__BASE + '/controllers/views');
+var viewsController = require(__BASE + '/controllers/views');
 
-var routes =
+var appRoutes =
   srcSettings
     .viewRoutes
     .map(function(path) {
       return {
         method: 'GET',
         path: path,
-        handler: viewController
+        handler: viewsController.renderApp
       }
     });
 
@@ -22,7 +22,12 @@ exports.register = function(server, options, next) {
       }
     }
   });
-  server.route(routes);
+  server.route({
+    method: 'GET',
+    path: '/login',
+    handler: viewsController.renderLogin
+  });
+  server.route(appRoutes);
   next();
 };
 
