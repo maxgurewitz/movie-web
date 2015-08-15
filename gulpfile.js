@@ -16,7 +16,7 @@ gulp.task('browserify', function() {
     .pipe(gulp.dest(__dirname + '/public/js/'));
 });
 
-gulp.task('pg', shell.task(['postgres -D /usr/local/var/postgres']));
+gulp.task('startPg', shell.task(['postgres -D /usr/local/var/postgres']));
 
 gulp.task('scss', function() {
   var sassStream = sass({
@@ -39,7 +39,7 @@ gulp.task('watch', function() {
 
 gulp.task('build', ['browserify', 'scss']);
 
-gulp.task('start', ['pg', 'build', 'watch'], function() {
+gulp.task('startApp', ['build', 'watch'], function() {
   nodemon({
     watch: __dirname + '/src/app/',
     script: __dirname + '/scripts/server.js',
@@ -48,3 +48,5 @@ gulp.task('start', ['pg', 'build', 'watch'], function() {
     env: { 'NODE_ENV': 'development' }
   });
 });
+
+gulp.task('start', ['startApp', 'startPg']);
