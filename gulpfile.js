@@ -50,3 +50,5 @@ gulp.task('startApp', ['build', 'watch'], function() {
 });
 
 gulp.task('start', ['startApp', 'startPg']);
+
+gulp.task('default', ['start']);

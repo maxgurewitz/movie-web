@@ -8,6 +8,10 @@ var appRoutes =
       return {
         method: 'GET',
         path: path,
+        auth: {
+          mode: 'try',
+          strategy: 'session'
+        },
         handler: viewsController.renderApp
       }
     });
@@ -25,6 +29,17 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'GET',
     path: '/login',
+    config: {
+      auth: {
+        mode: 'try',
+        strategy: 'session'
+      },
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: false
+        }
+      }
+    },
     handler: viewsController.renderLogin
   });
   server.route(appRoutes);

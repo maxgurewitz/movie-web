@@ -11,6 +11,13 @@ server.register(registered, function(err) {
   if (err) {
     return console.error('Failed to load a plugin:', err);
   }
+
+  server.auth.strategy('session', 'cookie', {
+    password: 'drowssap',
+    cookie: 'filmCount',
+    redirectTo: '/login',
+    isSecure: false
+  });
 });
 
 server.start(function(err) {
