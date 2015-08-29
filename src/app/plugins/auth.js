@@ -1,12 +1,12 @@
-var authController = require(__BASE + '/handlers/auth');
+var controller = require(__BASE + '/controllers/auth');
 
 exports.register = function(server, options, next) {
   server.route({
     method: 'POST',
     path: '/login',
-    handler: authController.login,
+    handler: controller.login,
     config: {
-     handler: login,
+     controller: login,
      auth: {
        mode: 'try',
        strategy: 'session'
@@ -25,7 +25,7 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'POST',
     path: '/logout',
-    handler: authController.logout
+    handler: controller.logout
   });
   next();
 };

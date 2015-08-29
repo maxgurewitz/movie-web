@@ -8,9 +8,11 @@ var appRoutes =
       return {
         method: 'GET',
         path: path,
-        auth: {
-          mode: 'try',
-          strategy: 'session'
+        config: {
+          auth: {
+            mode: 'try',
+            strategy: 'session'
+          }
         },
         handler: viewsController.renderApp
       }
