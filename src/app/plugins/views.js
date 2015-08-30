@@ -1,5 +1,5 @@
 var srcSettings = require(__BASE + '/../settings.json');
-var viewsController = require(__BASE + '/controllers/views');
+var controller = require(__BASE + '/controllers/views');
 
 var appRoutes =
   srcSettings
@@ -14,7 +14,7 @@ var appRoutes =
             strategy: 'session'
           }
         },
-        handler: viewsController.renderApp
+        handler: controller.renderApp
       }
     });
 
@@ -42,7 +42,7 @@ exports.register = function(server, options, next) {
         }
       }
     },
-    handler: viewsController.renderLogin
+    handler: controller.renderLogin
   });
   server.route(appRoutes);
   next();

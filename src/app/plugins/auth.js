@@ -6,7 +6,6 @@ exports.register = function(server, options, next) {
     path: '/login',
     handler: controller.login,
     config: {
-     controller: login,
      auth: {
        mode: 'try',
        strategy: 'session'
@@ -18,10 +17,6 @@ exports.register = function(server, options, next) {
      }
    }
   });
-  next();
-};
-
-exports.register = function(server, options, next) {
   server.route({
     method: 'POST',
     path: '/logout',
