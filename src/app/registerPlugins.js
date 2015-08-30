@@ -19,6 +19,23 @@ module.exports = function(server) {
 
   server.register([
     {
+      register: require('good'),
+      options: {
+        reporters: [
+          {
+            reporter: 'good-console',
+            events: {
+              log: '*',
+              start: '*',
+              stop: '*',
+              request: '*',
+              response: '*'
+            }
+          }
+        ]
+      }
+    },
+    {
       register: plugins.static,
       options: {}
     },
