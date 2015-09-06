@@ -17,8 +17,26 @@ exports.register = function(server, options, next) {
      }
    }
   });
+
   server.route({
     method: 'POST',
+    path: '/register',
+    handler: controller.register,
+    config: {
+     auth: {
+       mode: 'try',
+       strategy: 'session'
+     },
+     plugins: {
+       'hapi-auth-cookie': {
+         redirectTo: false
+       }
+     }
+   }
+  });
+
+  server.route({
+    method: 'GET',
     path: '/logout',
     handler: controller.logout
   });

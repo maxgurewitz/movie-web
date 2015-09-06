@@ -28,6 +28,7 @@ exports.register = function(server, options, next) {
       }
     }
   });
+
   server.route({
     method: 'GET',
     path: '/login',
@@ -43,6 +44,40 @@ exports.register = function(server, options, next) {
       }
     },
     handler: controller.renderLogin
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/server-error',
+    config: {
+      auth: {
+        mode: 'try',
+        strategy: 'session'
+      },
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: false
+        }
+      }
+    },
+    handler: controller.renderServerError
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/register',
+    config: {
+      auth: {
+        mode: 'try',
+        strategy: 'session'
+      },
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: false
+        }
+      }
+    },
+    handler: controller.renderRegister
   });
   server.route(appRoutes);
   next();

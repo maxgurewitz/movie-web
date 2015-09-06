@@ -1,0 +1,26 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/public/css/base.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  Register
+  <form method="post" action="/register">
+    <label for="register-user-name"> username </label>
+    <input id="register-user-name" type="text" name="user[userName]"></input>
+    <br>
+
+    <label for="register-first-name"> first name </label>
+    <input id="register-first-name" type="text" name="user[firstName]"></input>
+    <br>
+
+    <label for="register-last-name"> last name </label>
+    <input id="register-last-name" type="text" name="user[lastName]"></input>
+    <br>
+
+    <label for="register-password"> password  </label>
+    <input id="register-password" type="text" name="user[password]"></input>
+    <br>
+
+    <input type="submit"></input>
+  </form>
+</body>

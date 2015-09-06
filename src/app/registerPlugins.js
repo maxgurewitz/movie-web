@@ -18,6 +18,7 @@ module.exports = function(server) {
   });
 
   server.register([
+    require('hapi-to'),
     {
       register: require('good'),
       options: {
