@@ -14,7 +14,7 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "max",
+    "username": "postgres",
     "password": null,
     "database": "film_count_prod",
     "host": "127.0.0.1",
