@@ -6063,7 +6063,6 @@ button.close {
   box-sizing: border-box; }
 
 body {
-  color: white;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -6073,6 +6072,7 @@ body {
     display: flex;
     flex-direction: column; }
   body .body {
+    color: white;
     background-color: #063b43;
     flex: 0 0 50%;
     flex-flow: row wrap;

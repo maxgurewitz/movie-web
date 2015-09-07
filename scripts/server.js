@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 var Hapi = require('hapi');
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 var registerPlugins = require('../src/app/registerPlugins');
 
 var server = new Hapi.Server();

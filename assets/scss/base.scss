@@ -6,7 +6,6 @@
 * { box-sizing: border-box; }
 
 body {
-  color: white;
   @include default-flex;
   font-size: $default-font-size;
 
@@ -15,6 +14,7 @@ body {
   }
 
   .body {
+    color: white;
     background-color: $dark-slate-blue;
     flex: 0 0 50%;
     flex-flow: row wrap;
